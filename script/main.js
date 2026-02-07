@@ -41,7 +41,7 @@ document.addEventListener('click', () => {
 
 document.querySelector('.yes-btn').addEventListener('click', () => {
     document.querySelector('.final-question').innerHTML =
-        "<h2>🎉 I know you're my KUTCHUBUCHU 💝</h2><div style='font-size:3rem'>💞🌟</div>";
+        "<h2>🎉 You have no other option <br> you're Mine !!!! my dear KUTCHUBUCHU 💝</h2><div style='font-size:3rem'>💞🌟</div>";
 });
 
 document.querySelector('.no-btn').addEventListener('mouseover', function () {
@@ -52,3 +52,4 @@ document.querySelector('.no-btn').addEventListener('mouseover', function () {
 // Init
 createParticles();
 setTimeout(showNext, 1000);
+
