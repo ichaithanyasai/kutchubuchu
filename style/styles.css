@@ -8,15 +8,16 @@ body {
     min-height: 100vh;
     background: linear-gradient(45deg, #620080, #8a2be2);
     font-family: 'Courier New', monospace;
-    overflow: hidden;
+    overflow-x: hidden; /* Allow vertical scroll but not horizontal */
     color: white;
 }
 
 /* Floating particles */
 .love-particle {
     position: absolute;
-    font-size: 24px;
+    font-size: 20px; /* Slightly smaller for mobile */
     animation: float 6s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -26,11 +27,13 @@ body {
 
 /* Messages */
 .message-container {
-    position: absolute;
+    position: fixed; /* Changed from absolute */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 100%;
+    padding: 20px;
 }
 
 .message {
@@ -39,23 +42,20 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(50px);
-
-    font-size: 2.5rem;
+    font-size: 1.8rem; /* Reduced from 2.5rem */
     text-shadow: 0 0 15px rgba(255,50,150,0.5);
-
     transition: all 1.5s ease-in-out;
-
     text-align: center;
-
-    /* 🔑 CRITICAL FIXES */
-    width: auto;
+    
+    /* Mobile-friendly text */
+    width: 90%;
     max-width: 90vw;
-    white-space: nowrap;
-
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word;
+    line-height: 1.4;
+    
     will-change: transform, opacity;
 }
-
-
 
 .message.active {
     opacity: 1;
@@ -67,51 +67,67 @@ body {
     transform: translate(-50%, -50%) translateY(-50px) scale(0.8);
 }
 
-
 /* Full poem */
 .full-poem {
     display: none;
-    padding: 3rem;
+    padding: 2rem 1rem; /* Reduced padding for mobile */
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .poem-line {
     display: flex;
+    flex-direction: column; /* Stack vertically on mobile by default */
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .poem-line img {
-    width: 120px;
-    height: 120px;
+    width: 100px; /* Smaller images for mobile */
+    height: 100px;
     border-radius: 15px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .poem-line p {
-    font-size: 1.3rem;
+    font-size: 1.1rem; /* Slightly smaller for mobile */
+    line-height: 1.5;
+    max-width: 100%;
 }
 
 /* Buttons */
 .final-question {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.final-question h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .btn-group {
     display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
     justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
 .valentine-btn {
     padding: 1rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
 }
 
 .yes-btn {
@@ -129,4 +145,90 @@ body {
     position: fixed;
     inset: 0;
     pointer-events: none;
+}
+
+/* 📱 TABLET & LARGER SCREENS */
+@media (min-width: 768px) {
+    .message {
+        font-size: 2.2rem;
+    }
+    
+    .poem-line {
+        flex-direction: row; /* Side by side on tablets */
+        text-align: left;
+    }
+    
+    .poem-line img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .poem-line p {
+        font-size: 1.3rem;
+    }
+    
+    .btn-group {
+        flex-direction: row; /* Side by side buttons */
+    }
+    
+    .valentine-btn {
+        width: auto;
+    }
+    
+    .full-poem {
+        padding: 3rem;
+    }
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+    .message {
+        font-size: 2.5rem;
+    }
+    
+    .poem-line img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .poem-line p {
+        font-size: 1.5rem;
+    }
+    
+    .valentine-btn {
+        font-size: 1.2rem;
+    }
+}
+
+/* 📱 VERY SMALL SCREENS */
+@media (max-width: 400px) {
+    .message {
+        font-size: 1.4rem;
+    }
+    
+    .poem-line img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .poem-line p {
+        font-size: 1rem;
+    }
+    
+    .valentine-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Smooth scrolling for poem section */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for iOS viewport height issue */
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
 }
