@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Surprise</title>
+
+    <link rel="stylesheet" href="/Valentines-Day-Surprise/style/styles.css">
     <link rel="icon" type="image/x-icon" href="assets/heart.png">
 </head>
 <body>
-    <div class="message-container">
-        <div class="message" data-index="1">Every moment with you...</div>
-        <div class="message" data-index="2">Feels like a fairy tale ✨</div>
-        <div class="message" data-index="3">You're my forever spark 🌟</div>
-        <div class="message" data-index="4">This Valentine's...</div>
-        <div class="message" data-index="5">Will you be mine?</div>
-        <div class="message" data-index="6">Please 🥺?</div>
-        
-        <div class="final-question">
-            <h2>Be My Valentine?</h2>
-            <div class="btn-group">
-                <button class="valentine-btn yes-btn">Yes, Always! 🌹</button>
-                <button class="valentine-btn no-btn">Still Thinking 💭</button>
-            </div>
+
+<!-- 🎵 Background Music -->
+<audio id="bg-music" loop>
+    <source src="assets/love-song.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- 💬 Animated Intro Messages -->
+<div class="message-container">
+    <div class="message">Before you, I held my tears like secrets</div>
+    <div class="message">afraid they'd shatter if spoken aloud</div>
+    <div class="message">But you became the gentle space where breaking open felt like coming home</div>
+    <div class="message">You are patient like the moon</div>
+    <div class="message">never rushing my darkness</div>
+    <div class="message">just staying, glowing, constant</div>
+    <div class="message">A single word from you and the storm quiets</div>
+    <div class="message">You didn't just walk into my life</div>
+    <div class="message">you rewrote how I see it</div>
+    <div class="message">Suddenly people weren't puzzles to fear</div>
+    <div class="message">but stories to understand</div>
+    <div class="message">hearts with reasons, souls with shape</div>
+    <div class="message">You're the star I didn't know I was searching for</div>
+    <div class="message">the spark that turned my night into navigation</div>
+    <div class="message">You taught me trust isn't given, it's built</div>
+    <div class="message">one tender moment at a time</div>
+    <div class="message">So here's my heart, unguarded</div>
+    <div class="message">Will you be my Valentine?</div>
+</div>
+
+<!-- 💖 FULL POEM REVEAL -->
+<div class="full-poem" id="fullPoem">
+    <!-- Repeat for each line -->
+    <div class="poem-line"><img src="assets/line1.jpeg"><p>Before you, I held my tears like secrets</p></div>
+    <div class="poem-line"><img src="assets/line2.jpeg"><p>afraid they'd shatter if spoken aloud</p></div>
+    <div class="poem-line"><img src="assets/line3.jpeg"><p>But you became the gentle space where breaking open felt like coming home</p></div>
+    <div class="poem-line"><img src="assets/line4.jpeg"><p>You are patient like the moon</p></div>
+    <div class="poem-line"><img src="assets/line5.jpeg"><p>never rushing my darkness</p></div>
+    <div class="poem-line"><img src="assets/line6.jpeg"><p>just staying, glowing, constant</p></div>
+    <div class="poem-line"><img src="assets/line7.jpeg"><p>A single word from you and the storm quiets</p></div>
+    <div class="poem-line"><img src="assets/line8.jpeg"><p>You didn't just walk into my life</p></div>
+    <div class="poem-line"><img src="assets/line9.jpeg"><p>you rewrote how I see it</p></div>
+    <div class="poem-line"><img src="assets/line10.jpeg"><p>Suddenly people weren't puzzles to fear</p></div>
+    <div class="poem-line"><img src="assets/line11.jpeg"><p>but stories to understand</p></div>
+    <div class="poem-line"><img src="assets/line12.jpeg"><p>hearts with reasons, souls with shape</p></div>
+    <div class="poem-line"><img src="assets/line13.jpeg"><p>You're the star I didn't know I was searching for</p></div>
+    <div class="poem-line"><img src="assets/line14.jpeg"><p>the spark that turned my night into navigation</p></div>
+    <div class="poem-line"><img src="assets/line15.jpeg"><p>You taught me trust isn't given, it's built</p></div>
+    <div class="poem-line"><img src="assets/line16.jpeg"><p>one tender moment at a time</p></div>
+    <div class="poem-line"><img src="assets/line17.jpeg"><p>So here's my heart, unguarded</p></div>
+    <div class="poem-line"><img src="assets/line18.jpeg"><p>Will you be my Valentine?</p></div>
+    <div class="poem-line"><img src="assets/line19.jpeg"><p>Not because the calendar says so,</p></div>
+    <div class="poem-line"><img src="assets/line20.jpeg"><p>but because loving you feels like</p></div>
+    <div class="poem-line"><img src="assets/line21.jpeg"><p>finally learning to breathe</p></div>
+
+    <!-- 💍 Question -->
+    <div class="final-question">
+        <h2>Be My Valentine?</h2>
+        <div class="btn-group">
+            <button class="valentine-btn yes-btn">Yes, Always! 🌹</button>
+            <button class="valentine-btn no-btn">Still Thinking 💭</button>
         </div>
     </div>
+</div>
 
-    <div class="celebration"></div>
-    <script src="script/main.js"></script>
+<div class="celebration"></div>
+
+<script src="/Valentines-Day-Surprise/script/main.js"></script>
 </body>
 </html>
